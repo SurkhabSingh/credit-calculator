@@ -50,25 +50,3 @@ const printResults = (results) => {
   let resultGrid = document.getElementsByClassName("result")?.[0];
   let tempResultsDiv = document.createElement('div')
   tempResultsDiv.classList.add('result')
-  let monthsHeader = document.createElement('div')
-  monthsHeader.classList.add('grid-element')
-  let resultsHeader = document.createElement('div')
-  resultsHeader.classList.add('grid-element')
-  monthsHeader.append(document.createTextNode('Months'))
-  resultsHeader.append(document.createTextNode('Payments'))
-  tempResultsDiv.append(monthsHeader)
-  tempResultsDiv.append(resultsHeader)
-  results.map((result, i) => {
-    let paymentData = document.createElement('div')
-    let monthData = document.createElement('div')
-    monthData.append(document.createTextNode(`${i + 1}`))
-    paymentData.append(document.createTextNode(`$${result.payment}`))
-    monthData.classList.add('grid-element')
-    paymentData.classList.add('grid-element')
-    tempResultsDiv.append(monthData)
-    tempResultsDiv.append(paymentData)
-  })
-  resultGrid.replaceWith(tempResultsDiv)
-}
-
-form.addEventListener("submit", submitForm);
